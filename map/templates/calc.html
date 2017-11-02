@@ -1,6 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html> <head>
 <title>map</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
    integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
    crossorigin=""/>
@@ -51,6 +52,24 @@
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1IjoibGg2MjEwIiwiYSI6ImNqOTd2YXR1dzBheGUyd283dGxmcDZvbmgifQ.bPdGgPfhozP_nT8Zoq7Fsw'
 }).addTo(mymap);
+    var marker = L.marker([51.5, -0.09]).addTo(mymap);
+    var circle = L.circle([51.508, -0.11], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 500
+    }).addTo(mymap);
+    function onMapClick(e) {
+        alert("You clicked the map at "+  e.latlng);
+        var location = e.latlng;
+        console.log(typeof(location))
+        //var a = location[1]
+        //console.log(a)
+        
+    }
+
+    mymap.on('click', onMapClick);
+
 
 </script>
 

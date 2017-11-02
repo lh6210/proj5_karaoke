@@ -19,9 +19,9 @@ env:
 ## Installation
 install: env credentials
 
-credentials: brevets/credentials.ini
+credentials: map/credentials.ini
 
-brevets/credentials.ini: 
+map/credentials.ini: 
 	echo "You must manually create credentials.ini"
 
 
@@ -36,7 +36,7 @@ stop: 	env credentials
 	bash stop.sh
 
 test:	env
-	($(INVENV) cd brevets; nosetests) 
+	($(INVENV) cd map; nosetests) 
 
 
 ##

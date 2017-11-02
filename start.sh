@@ -20,7 +20,7 @@ echo "Activating ${activate}"
 source ${activate}
 echo "Activated"
 
-pushd brevets
+pushd map 
 python3 flask_brevets.py -P ${PORTNUM} &
 pid=$! 
 popd
